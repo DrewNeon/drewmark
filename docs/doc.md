@@ -11,6 +11,7 @@
 3. [Tag Syntax Rules](#3-tag-syntax-rules)
 4. [Attribute Syntax Rules](#4-attribute-syntax-rules)
 5. [Escaping Rules](#5-escaping-rules)
+6. [SVG Logo Usage Guide](#6-SVG-Logo-Usage-Guide)
 
 ---
 
@@ -981,6 +982,96 @@ The backslash `\`, when used as an escape character, is always hidden unless it 
 ### 5.1 Special Case Where Escaping Is Ineffective
 
 As mentioned earlier, any DrewMark syntax markers written inside inline code or code blocks are output as-is. However, there is yet one exception: the backtick (`` ` ``), since it is the very marker used to define these two syntax themselves. If you need to display a backtick within inline code, or three or more consecutive backticks at the beginning of a line within a code block, using a backslash for escaping will not wor, because backslash itself will be rendered as-is in these two syntax contexts and cannot function as an escape character. To handle this special case, you must rely on the quantity of backticks: the number of enclosing backticks must be greater than the number of backticks you wish to display.
+
+---
+
+## 6. SVG Logo Usage Guide
+
+This project provides a customizable SVG Logo: `images/drewmark-logo.svg`, with default dimensions of 300px width and 250px height.
+
+### 6.1 Structure Overview
+
+```html
+<svg viewBox="0 0 300 250" class="drewmark-logo">
+  <g class="black-strokes">
+    <!-- Black filled shapes -->
+  </g>
+  <g class="blue-strokes">
+    <!-- Blue filled shapes -->
+  </g>
+</svg>
+```
+
+| CSS Class        | Description                               |
+| ---------------- | ----------------------------------------- |
+| `.drewmark-logo` | SVG root container; controls overall size |
+| `.black-strokes` | Black shape group; color customizable     |
+| `.blue-strokes`  | Blue shape group; color customizable      |
+
+---
+
+### 6.2 Adjusting Overall Size
+
+Simply control the width of `.drewmark-logo` via CSS; the height will be calculated automatically based on the aspect ratio.
+
+```css
+/* Fixed size */
+.drewmark-logo {
+  width: 120px;
+  height: auto;       /* ⚠️ Must be retained; otherwise, height won't auto-calculate */
+  display: block;     /* Removes extra bottom spacing from inline elements */
+}
+
+/* Responsive size */
+@media (max-width: 768px) {
+  .drewmark-logo {
+    width: 80px;
+  }
+}
+```
+
+---
+
+### 6.3 Adjusting Group Colors
+
+The two shape groups can have their `fill` properties set independently without affecting each other.
+
+1. Basic Color Settings
+
+```css
+.drewmark-logo .black-strokes * {
+  fill: #FFFFFF;
+}
+
+.drewmark-logo .blue-strokes * {
+  fill: #ACB548;
+}
+```
+
+2. Interaction & Theme Extensions
+
+```css
+/* Hover state */
+.drewmark-logo:hover .blue-strokes * {
+  fill: #ff6600;
+  transition: fill 0.3s ease;
+}
+
+/* Dark theme adaptation */
+@media (prefers-color-scheme: dark) {
+  .drewmark-logo .black-strokes * {
+    fill: #ffffff;
+  }
+  .drewmark-logo .blue-strokes * {
+    fill: #ACB548;
+  }
+}
+
+/* Toggle via parent state class */
+.active .drewmark-logo .blue-strokes * {
+  fill: #e63946;
+}
+```
 
 ---
 

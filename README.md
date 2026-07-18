@@ -56,9 +56,9 @@ This is **bold**, this is %%italic%%, and this is !!highlighted!!.
 
 This repository contains the **DrewMark language specification** only. For implementations, see:
 
-* [Javascript Parser](../../../../drewneon/drewmark-js-parser)
-* [Javascript Editor](../../../../drewneon/drewmark-js-editor)
-* [Javascript Converter](../../../../drewneon/drewmark-js-converter)
+* [Javascript Parser](https://github.com/drewneon/drewmark-js-parser)
+* [Javascript Editor](https://github.com/drewneon/drewmark-js-editor)
+* [Javascript Converter](https://github.com/drewneon/drewmark-js-converter)
 
 ---
 

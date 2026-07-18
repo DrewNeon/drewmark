@@ -11,6 +11,7 @@
 3. [标签语法规则](#3-标签语法规则)
 4. [属性语法规则](#4-属性语法规则)
 5. [转义规则](#5-转义规则)
+6. [SVG Logo 使用说明](#6-SVG-Logo-使用说明)
 
 ---
 
@@ -980,6 +981,96 @@ HTML 本身也是纯文本文件，其中并不包含多媒体内容，但可以
 ### 5.1 转义无效的特例
 
 前文提到在行内代码或代码块的内部书写任何*朱码*语法的标记符号都会原样输出，但仍有一个符号例外——反引号（`` ` ``），因为反引号是行内代码和代码块自身用到的标记符号。如需在行内引用中显示反引号或者在引用块内的行首位置显示连续三个或更多反引号，使用反斜杠转义并不起作用，因为反斜杠在这两种语法中反倒会被原样输出，无法被视为转义符。遇到这种特例，必须通过反引号的数量来实现，即包裹标记的反引号数量要大于所需显示的反引号数量。
+
+---
+
+## 6. SVG Logo 使用说明
+
+本项目提供了一个可控制的SVG Logo：`images/drewmark-logo.svg`，其默认宽度为 300px、高度 250px。
+
+### 6.1 结构概览
+
+```HTML
+<svg viewBox="0 0 300 250" class="drewmark-logo">
+  <g class="black-strokes">
+    <!-- 黑色填充图形 -->
+  </g>
+  <g class="blue-strokes">
+    <!-- 蓝色填充图形 -->
+  </g>
+</svg>
+```
+
+| CSS 类名         | 作用                      |
+| ---------------- | ------------------------- |
+| `.drewmark-logo` | SVG 根容器，可控制整体尺寸  |
+| `.black-strokes` | 黑色图形组，可独立控制颜色  |
+| `.blue-strokes`  | 蓝色图形组，可独立控制颜色  |
+
+---
+
+### 6.2 调整整体尺寸
+
+通过 CSS 控制 `.drewmark-logo` 的宽度即可，高度将自动按比例计算。
+
+```css
+/* 固定尺寸 */
+.drewmark-logo {
+  width: 120px;
+  height: auto;       /* ⚠️ 必须保留，否则高度不会自动计算 */
+  display: block;     /* 消除 inline 元素底部多余间距 */
+}
+
+/* 响应式尺寸 */
+@media (max-width: 768px) {
+  .drewmark-logo {
+    width: 80px;
+  }
+}
+```
+
+---
+
+### 6.3 调整分组颜色
+
+两个图形组可独立设置 `fill`（填充色）属性，互不影响。
+
+1. 基础颜色设定
+
+```css
+.drewmark-logo .black-strokes * {
+  fill: #FFFFFF;
+}
+
+.drewmark-logo .blue-strokes * {
+  fill: #ACB548;
+}
+```
+
+2. 交互与主题扩展
+
+```css
+/* Hover 状态 */
+.drewmark-logo:hover .blue-strokes * {
+  fill: #ff6600;
+  transition: fill 0.3s ease;
+}
+
+/* 暗色主题适配 */
+@media (prefers-color-scheme: dark) {
+  .drewmark-logo .black-strokes * {
+    fill: #ffffff;
+  }
+  .drewmark-logo .blue-strokes * {
+    fill: #ACB548;
+  }
+}
+
+/* 通过父级状态类切换 */
+.active .drewmark-logo .blue-strokes * {
+  fill: #e63946;
+}
+```
 
 ---
 
