@@ -989,28 +989,7 @@ As mentioned earlier, any DrewMark syntax markers written inside inline code or 
 
 This project provides a customizable SVG Logo: `images/drewmark-logo.svg`, with default dimensions of 300px width and 250px height.
 
-### 6.1 Structure Overview
-
-```html
-<svg viewBox="0 0 300 250" class="drewmark-logo">
-  <g class="black-strokes">
-    <!-- Black filled shapes -->
-  </g>
-  <g class="blue-strokes">
-    <!-- Blue filled shapes -->
-  </g>
-</svg>
-```
-
-| CSS Class        | Description                               |
-| ---------------- | ----------------------------------------- |
-| `.drewmark-logo` | SVG root container; controls overall size |
-| `.black-strokes` | Black shape group; color customizable     |
-| `.blue-strokes`  | Blue shape group; color customizable      |
-
----
-
-### 6.2 Adjusting Overall Size
+### 6.1 Adjusting Overall Size
 
 Simply control the width of `.drewmark-logo` via CSS; the height will be calculated automatically based on the aspect ratio.
 
@@ -1032,47 +1011,12 @@ Simply control the width of `.drewmark-logo` via CSS; the height will be calcula
 
 ---
 
-### 6.3 Adjusting Group Colors
+### 6.2 Two Color Schemes
 
-The two shape groups can have their `fill` properties set independently without affecting each other.
++ The DrewMark SVG logo defaults to a light-background scheme composed of two colors: `#000000` and `#534ab7`, and automatically switches to inverted colors when dark mode is detected.
 
-1. Basic Color Settings
-
-```css
-.drewmark-logo .black-strokes * {
-  fill: #FFFFFF;
-}
-
-.drewmark-logo .blue-strokes * {
-  fill: #ACB548;
-}
-```
-
-2. Interaction & Theme Extensions
-
-```css
-/* Hover state */
-.drewmark-logo:hover .blue-strokes * {
-  fill: #ff6600;
-  transition: fill 0.3s ease;
-}
-
-/* Dark theme adaptation */
-@media (prefers-color-scheme: dark) {
-  .drewmark-logo .black-strokes * {
-    fill: #ffffff;
-  }
-  .drewmark-logo .blue-strokes * {
-    fill: #ACB548;
-  }
-}
-
-/* Toggle via parent state class */
-.active .drewmark-logo .blue-strokes * {
-  fill: #e63946;
-}
-```
++ To display the inverted DrewMark SVG logo on a dark background outside of dark mode, use the `<object>` tag to reference its `dark` theme: `<object data="path/to/drewmark-logo.svg?theme=dark" type="image/svg+xml" width="32px" height="25px"></object>`. Note: Both width and height must be specified!
 
 ---
 
-*Version: v2.3*
+*Version: v1.2.3*

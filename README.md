@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Type-Specification-blue?style=flat-square" alt="Specification">
-  <img src="https://img.shields.io/badge/Spec-v2.3-green?style=flat-square" alt="Spec v2.3">
+  <img src="https://img.shields.io/badge/Spec-v1.2.3-green?style=flat-square" alt="Spec v1.2.3">
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="MIT License">
   <img src="https://img.shields.io/badge/Lang-English%20%7C%20Chinese-red?style=flat-square" alt="Bilingual">
 </p>
@@ -47,7 +47,7 @@ This is **bold**, this is %%italic%%, and this is !!highlighted!!.
 ## Table
 | Name     | Version |
 | ======== | ======= |
-| DrewMark | v2.3    |
+| DrewMark | v1.2.3    |
 ```
 
 ---

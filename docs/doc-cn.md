@@ -988,30 +988,9 @@ HTML 本身也是纯文本文件，其中并不包含多媒体内容，但可以
 
 本项目提供了一个可控制的SVG Logo：`images/drewmark-logo.svg`，其默认宽度为 300px、高度 250px。
 
-### 6.1 结构概览
+### 6.1 调整整体尺寸
 
-```HTML
-<svg viewBox="0 0 300 250" class="drewmark-logo">
-  <g class="black-strokes">
-    <!-- 黑色填充图形 -->
-  </g>
-  <g class="blue-strokes">
-    <!-- 蓝色填充图形 -->
-  </g>
-</svg>
-```
-
-| CSS 类名         | 作用                      |
-| ---------------- | ------------------------- |
-| `.drewmark-logo` | SVG 根容器，可控制整体尺寸  |
-| `.black-strokes` | 黑色图形组，可独立控制颜色  |
-| `.blue-strokes`  | 蓝色图形组，可独立控制颜色  |
-
----
-
-### 6.2 调整整体尺寸
-
-通过 CSS 控制 `.drewmark-logo` 的宽度即可，高度将自动按比例计算。
+通过 CSS 控制 `.drewmark-logo` 的宽度，高度设为自动按比例计算。
 
 ```css
 /* 固定尺寸 */
@@ -1031,47 +1010,12 @@ HTML 本身也是纯文本文件，其中并不包含多媒体内容，但可以
 
 ---
 
-### 6.3 调整分组颜色
+### 6.2 两种配色
 
-两个图形组可独立设置 `fill`（填充色）属性，互不影响。
++ *朱码*的 SVG Logo 默认适配浅色背景，由 `#000000` 和 `#534ab7` 双色组成；当遇到深色模式时自动切换为反色显示。
 
-1. 基础颜色设定
-
-```css
-.drewmark-logo .black-strokes * {
-  fill: #FFFFFF;
-}
-
-.drewmark-logo .blue-strokes * {
-  fill: #ACB548;
-}
-```
-
-2. 交互与主题扩展
-
-```css
-/* Hover 状态 */
-.drewmark-logo:hover .blue-strokes * {
-  fill: #ff6600;
-  transition: fill 0.3s ease;
-}
-
-/* 暗色主题适配 */
-@media (prefers-color-scheme: dark) {
-  .drewmark-logo .black-strokes * {
-    fill: #ffffff;
-  }
-  .drewmark-logo .blue-strokes * {
-    fill: #ACB548;
-  }
-}
-
-/* 通过父级状态类切换 */
-.active .drewmark-logo .blue-strokes * {
-  fill: #e63946;
-}
-```
++ 如需在非深色模式的深色背景上显示反色的*朱码* SVG Logo，请使用 `<object>` 标签引用其 `dark` 主题：`<object data="path/to/drewmark-logo.svg?theme=dark" type="image/svg+xml" width="32px" height="25px"></object>`。注意：宽和高都要设定！
 
 ---
 
-*版本: v2.3*
+*版本: v1.2.3*
