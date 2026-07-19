@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../images/drewmark-logo.svg" alt="DrewMark Logo" width="300" height=“250”>
+  <img src="../images/drewmark-logo.png" alt="DrewMark Logo" width="300" height=“250”>
 </p>
 
 # 朱码文档
