@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../images/logo.png" alt="DrewMark Logo">
+  <img src="../images/drewmark-logo.svg" alt="DrewMark Logo">
 </p>
 
 # DrewMark Documentation
@@ -424,7 +424,7 @@ Note: Width and height is independent. If either value is not a positive integer
 **Full Example**:
 | DrewMark Text                                       | Parsed Output                                                                  |
 | --------------------------------------------------- | ------------------------------------------------------------------------------ |
-| `!(Logo /50\|50/){https://example.com/logo.png}`    | `<img src="https://example.com/logo.png" alt="Logo" width="50" height="50" />` |
+| `!(Logo /50\|50/){https://example.com/drewmark-logo.svg}`    | `<img src="https://example.com/drewmark-logo.svg" alt="Logo" width="50" height="50" />` |
 | `!(Thumbnail /200/){https://example.com/image.png}` | `<img src="https://example.com/image.png" alt="Thumbnail" width="200" />`      |
 | `!(){https://example.com/image.png}`                | `<img src="https://example.com/image.png" />`                                  |
 

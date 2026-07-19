@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logo.png" alt="DrewMark Logo">
+  <img src="images/drewmark-logo.svg" alt="DrewMark Logo">
 </p>
 
 <p align="center">
@@ -47,7 +47,7 @@ This is **bold**, this is %%italic%%, and this is !!highlighted!!.
 ## Table
 | Name     | Version |
 | ======== | ======= |
-| DrewMark | v1.2.3    |
+| DrewMark | v1.2.3  |
 ```
 
 ---

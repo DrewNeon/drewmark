@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../images/logo.png" alt="DrewMark Logo">
+  <img src="../images/drewmark-logo.svg" alt="DrewMark Logo">
 </p>
 
 # 朱码文档
@@ -427,7 +427,7 @@ HTML 本身也是纯文本文件，其中并不包含多媒体内容，但可以
 
 | 原文                                             | 解析输出                                                                        |
 | ------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `!(Logo /50\|50/){https://example.com/logo.png}` | `<img src="https://example.com/logo.png" alt="Logo" width="50" height="50" />` |
+| `!(Logo /50\|50/){https://example.com/drewmark-logo.svg}` | `<img src="https://example.com/drewmark-logo.svg" alt="Logo" width="50" height="50" />` |
 | `!(缩略图/200/){https://example.com/image.png}`  | `<img src="https://example.com/image.png" alt="缩略图” width="200" />`          |
 | `!(){https://example.com/image.png}`             | `<img src="https://example.com/image.png" />`                                  |
 
