@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../images/drewmark-logo.svg" alt="DrewMark Logo">
+  <img src="../images/drewmark-logo.svg" alt="DrewMark Logo" width="300" height=“250”>
 </p>
 
 # 朱码文档
@@ -984,9 +984,9 @@ HTML 本身也是纯文本文件，其中并不包含多媒体内容，但可以
 
 ---
 
-## 6. SVG Logo 使用说明
+## 6. SVG 标志使用说明
 
-本项目提供了一个可控制的SVG Logo：`images/drewmark-logo.svg`，其默认宽度为 300px、高度 250px。
+本项目提供了一个可控制的 SVG 标志：`images/drewmark-logo.svg`，其默认宽度为 300px、高度 250px。
 
 ### 6.1 调整整体尺寸
 
@@ -1012,9 +1012,9 @@ HTML 本身也是纯文本文件，其中并不包含多媒体内容，但可以
 
 ### 6.2 两种配色
 
-+ *朱码*的 SVG Logo 默认适配浅色背景，由 `#000000` 和 `#534ab7` 双色组成；当遇到深色模式时自动切换为反色显示。
++ *朱码*的 SVG 标志默认适配浅色背景，由 `#000000` 和 `#534ab7` 双色组成；当遇到深色模式时自动切换为反色显示。
 
-+ 如需在非深色模式的深色背景上显示反色的*朱码* SVG Logo，请使用 `<object>` 标签引用其 `dark` 主题：`<object data="path/to/drewmark-logo.svg?theme=dark" type="image/svg+xml" width="32px" height="25px"></object>`。注意：宽和高都要设定！
++ 如需在非深色模式的深色背景上显示反色的*朱码* SVG 标志，请使用 `<object>` 标签引用其 `dark` 主题：`<object data="path/to/drewmark-logo.svg?theme=dark" type="image/svg+xml" width="32px" height="25px"></object>`。注意：宽和高都要设定！
 
 ---
 
